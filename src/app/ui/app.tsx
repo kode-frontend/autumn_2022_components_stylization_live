@@ -5,6 +5,7 @@ import { useFonts } from 'expo-font';
 
 import { AppThemeProvider, styled } from '@shared/ui/theme';
 import { AppNavigation } from '@pages/ui';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const StorybookButton = styled.TouchableOpacity`
   height: 32px;
@@ -38,23 +39,27 @@ export const App = ({ storybookUI }: Props) => {
   if (storybookUI && !isStorybookClosed) {
     return (
       <StrictMode>
-        <AppThemeProvider>
-          {storybookUI}
-          <StorybookButton onPress={() => setStorybookClosed(true)}>
-            <StorybookButtonText>OPEN APP</StorybookButtonText>
-          </StorybookButton>
-        </AppThemeProvider>
+        <SafeAreaProvider>
+          <AppThemeProvider>
+            {storybookUI}
+            <StorybookButton onPress={() => setStorybookClosed(true)}>
+              <StorybookButtonText>OPEN APP</StorybookButtonText>
+            </StorybookButton>
+          </AppThemeProvider>
+        </SafeAreaProvider>
       </StrictMode>
     );
   }
 
   return (
     <StrictMode>
-      <AppThemeProvider>
-        <NavigationContainer>
-          <AppNavigation />
-        </NavigationContainer>
-      </AppThemeProvider>
+      <SafeAreaProvider>
+        <AppThemeProvider>
+          <NavigationContainer>
+            <AppNavigation />
+          </NavigationContainer>
+        </AppThemeProvider>
+      </SafeAreaProvider>
     </StrictMode>
   );
 };
