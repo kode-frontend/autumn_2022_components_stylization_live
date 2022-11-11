@@ -1,13 +1,26 @@
-import { storiesOf } from '@storybook/react-native';
-import { text } from '@storybook/addon-knobs';
+import { ComponentStory } from '@storybook/react-native';
 
-import { MenuList } from './menu-list';
+import { ProfilePage } from './profile-page';
 import { Icons } from '../../atoms';
 
-storiesOf('ui/organisms', module).add('menu-list', () => {
-  return (
-    <MenuList
-      items={[
+const Meta = {
+  title: 'ui/pages/ProfilePage',
+  args: {
+    profileInfo: {
+      uri: 'https://media.gettyimages.com/photos/closeup-of-thoughtful-young-woman-wearing-eyeglasses-against-neon-picture-id1132601613?s=612x612',
+      userName: 'Филипп Ребийяр Олегович',
+      phone: '+7 (951) *** - ** - 24',
+    },
+  },
+};
+
+export default Meta;
+
+export const Default: ComponentStory<typeof ProfilePage> = args => (
+  <ProfilePage
+    {...args}
+    menu={{
+      items: [
         {
           title: 'Настройки',
           left: <Icons.Settings />,
@@ -30,7 +43,7 @@ storiesOf('ui/organisms', module).add('menu-list', () => {
           left: <Icons.Exit />,
           onPress: () => null,
         },
-      ]}
-    />
-  );
-});
+      ],
+    }}
+  />
+);
