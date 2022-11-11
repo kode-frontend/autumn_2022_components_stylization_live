@@ -138,7 +138,7 @@ docs/pages/versions/*/react-native/*.diff
 /ios/Pods
 
 # Storybook
-/storybook/storyLoader.js
+storybook.requires.js
 
 # Scripts
 /scripts/transform-svg/input/*
