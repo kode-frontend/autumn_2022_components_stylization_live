@@ -1,7 +1,8 @@
 export type TypographyVariants =
   | 'title'
   | 'largeTitle'
-  | 'subtitle'
+  | 'subtitle1'
+  | 'subtitle2'
   | 'body20'
   | 'body17Medium'
   | 'body17Regular'

@@ -50,10 +50,16 @@ export const darkTheme = {
       letterSpacing: '0.34px',
       fontFamily: 'SF_PRO_MEDIUM_500',
     },
-    subtitle: {
+    subtitle1: {
       size: '20px',
       lineHeight: '25px',
       letterSpacing: '0.38px',
+      fontFamily: 'SF_PRO_SEMIBOLD_600',
+    },
+    subtitle2: {
+      size: '17px',
+      lineHeight: '22px',
+      letterSpacing: '-0.41px',
       fontFamily: 'SF_PRO_SEMIBOLD_600',
     },
     body20: {
