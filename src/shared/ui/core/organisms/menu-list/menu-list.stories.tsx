@@ -1,3 +1,4 @@
+import { ComponentMeta } from '@storybook/react-native';
 import { styled } from '@shared/ui/theme';
 
 import { MenuList } from './menu-list';
@@ -8,8 +9,9 @@ const Wrapper = styled.View`
   justify-content: center;
 `;
 
-const Meta = {
+const Meta: ComponentMeta<typeof MenuList> = {
   title: 'ui/organisms/MenuList',
+  component: MenuList,
 };
 
 export default Meta;

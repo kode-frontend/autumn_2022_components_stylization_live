@@ -1,5 +1,5 @@
 import { styled } from '@shared/ui/theme';
-import { ComponentStory } from '@storybook/react-native';
+import { ComponentMeta, ComponentStory } from '@storybook/react-native';
 
 import { ProfileInfo } from './profile-info';
 
@@ -8,8 +8,9 @@ const Wrapper = styled.View`
   justify-content: center;
 `;
 
-const Meta = {
+const Meta: ComponentMeta<typeof ProfileInfo> = {
   title: 'ui/molecules/ProfileInfo',
+  component: ProfileInfo,
   args: {
     uri: 'https://media.gettyimages.com/photos/closeup-of-thoughtful-young-woman-wearing-eyeglasses-against-neon-picture-id1132601613?s=612x612',
     userName: 'Филипп Ребийяр Олегович',
