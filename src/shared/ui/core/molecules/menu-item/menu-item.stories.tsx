@@ -16,6 +16,11 @@ const Meta: ComponentMeta<typeof MenuItem> = {
   args: {
     title: 'Настройки',
   },
+  argTypes: {
+    onPress: {
+      action: 'onPress',
+    },
+  },
 };
 
 export default Meta;
@@ -24,7 +29,6 @@ export const Default: ComponentStory<typeof MenuItem> = args => (
   <Wrapper>
     <MenuItem
       {...args}
-      onPress={() => null}
       left={<Icons.Settings />}
       right={<Icons.ChevronRight />}
     />
