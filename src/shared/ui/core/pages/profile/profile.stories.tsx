@@ -1,10 +1,11 @@
-import { ComponentStory } from '@storybook/react-native';
+import { ComponentMeta, ComponentStory } from '@storybook/react-native';
 
 import { Profile } from './profile';
 import { Icons } from '../../atoms';
 
-const Meta = {
+const Meta: ComponentMeta<typeof Profile> = {
   title: 'ui/pages/Profile',
+  component: Profile,
   args: {
     profileInfo: {
       uri: 'https://media.gettyimages.com/photos/closeup-of-thoughtful-young-woman-wearing-eyeglasses-against-neon-picture-id1132601613?s=612x612',

@@ -12,6 +12,7 @@ const Wrapper = styled.View`
 
 const Meta: ComponentMeta<typeof MenuItem> = {
   title: 'ui/molecules/MenuItem',
+  component: MenuItem,
   args: {
     title: 'Настройки',
   },
