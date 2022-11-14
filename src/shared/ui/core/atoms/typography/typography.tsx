@@ -1,29 +1,19 @@
-import { StyleProp, TextStyle } from 'react-native';
-
+import { css } from 'styled-components/native';
 import { styled } from '@shared/ui/theme';
 import { TypographyVariants } from '@shared/ui/theme/types';
 
-const TextVariant = styled.Text<{ $variant: TypographyVariants }>`
-  font-family: ${({ theme, $variant }) =>
-    theme.typography[$variant].fontFamily};
-  font-size: ${({ theme, $variant }) => theme.typography[$variant].size};
-  letter-spacing: ${({ theme, $variant }) =>
-    theme.typography[$variant].letterSpacing};
-  line-height: ${({ theme, $variant }) =>
-    theme.typography[$variant].lineHeight};
-  color: ${({ theme }) => theme.palette.text.primary};
-`;
-
-type Props = {
-  children: string;
+type TTypographyProps = {
   variant?: TypographyVariants;
-  style?: StyleProp<TextStyle>;
 };
 
-export const Typography = ({ variant = 'body20', style, children }: Props) => {
-  return (
-    <TextVariant $variant={variant} style={style}>
-      {children}
-    </TextVariant>
-  );
-};
+export const Typography = styled.Text.attrs(() => ({
+  allowFontScaling: false,
+}))<TTypographyProps>`
+  ${({ theme: { typography, palette }, variant = 'body20' }) => css`
+    font-family: ${typography[variant].fontFamily};
+    letter-spacing: ${typography[variant].letterSpacing};
+    line-height: ${typography[variant].lineHeight};
+    font-size: ${typography[variant].size};
+    color: ${palette.text.primary};
+  `}
+`;
