@@ -1,5 +1,4 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react-native';
-
 import { styled } from '@shared/ui/theme';
 
 import { MenuItem } from './menu-item';
@@ -25,7 +24,9 @@ const Meta: ComponentMeta<typeof MenuItem> = {
 
 export default Meta;
 
-export const Default: ComponentStory<typeof MenuItem> = args => (
+type TStory = ComponentStory<typeof MenuItem>;
+
+export const Default: TStory = args => (
   <Wrapper>
     <MenuItem
       {...args}

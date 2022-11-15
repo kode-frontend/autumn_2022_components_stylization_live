@@ -6,16 +6,20 @@ const Flex1 = styled.View`
   flex: 1;
 `;
 
+type TWrapperProps = {
+  theme: Theme;
+  bottomInset: number;
+};
+
 const Wrapper = styled.ScrollView.attrs(
-  ({ theme, bottomInset }: { theme: Theme; bottomInset: number }) => ({
+  ({ theme, bottomInset }: TWrapperProps) => ({
     contentContainerStyle: {
       flexGrow: 1,
       paddingBottom: bottomInset + theme.spacing(1),
+      bottomInset,
     },
   }),
-)<{
-  bottomInset: number;
-}>`
+)<TWrapperProps>`
   flex: 1;
   background-color: ${({ theme }) => theme.palette.background.primary};
 `;

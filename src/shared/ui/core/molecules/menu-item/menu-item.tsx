@@ -28,10 +28,13 @@ export type TMenuItem = {
   left: React.ReactNode;
   title: string;
   right?: React.ReactNode;
+};
+
+type Props = TMenuItem & {
   onPress: () => void;
 };
 
-export const MenuItem = ({ left, title, right, onPress }: TMenuItem) => {
+export const MenuItem = ({ left, title, right, onPress }: Props) => {
   return (
     <Button activeOpacity={0.7} onPress={onPress}>
       {left}

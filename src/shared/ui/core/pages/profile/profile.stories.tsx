@@ -2,6 +2,28 @@ import { ComponentMeta, ComponentStory } from '@storybook/react-native';
 
 import { Profile } from './profile';
 import { Icons } from '../../atoms';
+import { TMenuItem } from '../../molecules';
+
+const menuItems: TMenuItem[] = [
+  {
+    title: 'Настройки',
+    left: <Icons.Settings />,
+    right: <Icons.ChevronRight />,
+  },
+  {
+    title: 'Тема приложения',
+    left: <Icons.Moon />,
+    right: <Icons.ChevronRight />,
+  },
+  {
+    title: 'Служба поддержки',
+    left: <Icons.Phone />,
+  },
+  {
+    title: 'Выход',
+    left: <Icons.Exit />,
+  },
+];
 
 const Meta: ComponentMeta<typeof Profile> = {
   title: 'ui/pages/Profile',
@@ -17,33 +39,6 @@ const Meta: ComponentMeta<typeof Profile> = {
 
 export default Meta;
 
-const menuMock = {
-  items: [
-    {
-      title: 'Настройки',
-      left: <Icons.Settings />,
-      right: <Icons.ChevronRight />,
-      onPress: () => null,
-    },
-    {
-      title: 'Тема приложения',
-      left: <Icons.Moon />,
-      right: <Icons.ChevronRight />,
-      onPress: () => null,
-    },
-    {
-      title: 'Служба поддержки',
-      left: <Icons.Phone />,
-      onPress: () => null,
-    },
-    {
-      title: 'Выход',
-      left: <Icons.Exit />,
-      onPress: () => null,
-    },
-  ],
-};
-
 export const Default: ComponentStory<typeof Profile> = args => (
-  <Profile {...args} menu={menuMock} />
+  <Profile {...args} menu={{ items: menuItems, onPress: () => null }} />
 );

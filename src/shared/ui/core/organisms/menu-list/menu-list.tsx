@@ -1,18 +1,18 @@
 import { ComponentProps } from 'react';
 
 import { MenuItem } from '../../molecules';
-
-type TMenuItemProps = ComponentProps<typeof MenuItem>;
+import { TMenuItem } from '../../molecules/menu-item/menu-item';
 
 type TMenuList = {
-  items: TMenuItemProps[];
+  items: TMenuItem[];
+  onPress: () => void;
 };
 
-export const MenuList = ({ items }: TMenuList) => {
+export const MenuList = ({ items, onPress }: TMenuList) => {
   return (
     <>
       {items.map(item => (
-        <MenuItem {...item} />
+        <MenuItem {...item} onPress={onPress} />
       ))}
     </>
   );

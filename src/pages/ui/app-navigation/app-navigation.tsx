@@ -44,25 +44,22 @@ export const AppNavigation = () => {
                   title: 'Настройки',
                   left: <Icons.Settings />,
                   right: <Icons.ChevronRight />,
-                  onPress: () => null,
                 },
                 {
                   title: 'Тема приложения',
                   left: <Icons.Moon />,
                   right: <Icons.ChevronRight />,
-                  onPress: () => null,
                 },
                 {
                   title: 'Служба поддержки',
                   left: <Icons.Phone />,
-                  onPress: () => null,
                 },
                 {
                   title: 'Выход',
                   left: <Icons.Exit />,
-                  onPress: () => null,
                 },
               ],
+              onPress: () => null,
             }}
           />
         )}

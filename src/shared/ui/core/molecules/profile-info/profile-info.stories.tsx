@@ -20,7 +20,9 @@ const Meta: ComponentMeta<typeof ProfileInfo> = {
 
 export default Meta;
 
-export const Default: ComponentStory<typeof ProfileInfo> = args => (
+type TStory = ComponentStory<typeof ProfileInfo>;
+
+export const Default: TStory = args => (
   <Wrapper>
     <ProfileInfo {...args} />
   </Wrapper>
